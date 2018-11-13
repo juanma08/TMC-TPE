@@ -4,7 +4,7 @@ def CalcularProb(Ciclos):
     Contador=0
     for i in range(0, Ciclos):
         x = Resultado()
-        if x != -1:
+        if x == -1:
             Contador= Contador + 1
         i = i+1
     return (Contador/Ciclos)    
@@ -37,7 +37,7 @@ def Estacionar(PatentesAutos):
     return (-1)       
 
 def Resultado ():
-    CantAutos = 10
+    CantAutos = 5
     Autos = ListaAleatorios(CantAutos)
     Logro = Estacionar(Autos)
     return (Logro)
@@ -58,12 +58,12 @@ def DiferenciaProb (E):
         else: 
             ProbAnterior = ProbActual
         ProbActual = (ContLogros/Contador)    
-    return (Contador)
+    return (ProbActual)
             
         
 
-Epsilon = 0.01
-CantCiclos = 1000
+Epsilon = 0.001
+CantCiclos = 100
 IncisoA = Resultado()
 IncisoB = CalcularProb(CantCiclos)
 IncisoD = DiferenciaProb(Epsilon)
